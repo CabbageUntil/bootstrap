@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="renderer" content="webkit">
+<title></title>
+<link rel="stylesheet" href="../css/pintuer.css">
+<link rel="stylesheet" href="../css/admin.css">
+<script src="../js/jquery.js"></script>
+<script src="../js/pintuer.js"></script>
+</head>
+<body>
+	<form method="post" action="" id="listform">
+		<div class="panel1 admin-panel1">
+    		<div class="panel-head">
+    			<strong class="icon-reorder"> 内容列表</strong>
+    			<a href="" style="float:right; display:none;">添加字段</a>
+    		</div>
+    		<div class="padding border-bottom">
+      			<ul class="search" style="padding-left:10px;">
+        		<li>搜索：</li>
+        		<li>年级：
+          			<select name="s_ishome" class="input" onchange="changesearch()" style="width:60px; line-height:17px; display:inline-block">
+            			<option value="1">2013</option>
+            			<option value="2">2014</option>
+            			<option value="3">2015</option>
+            			<option value="4">2016</option>
+          			</select>
+          			&nbsp;&nbsp;
+          			专业：
+          			<select name="s_isvouch" class="input" onchange="changesearch()"  style="width:120px; line-height:17px;display:inline-block">
+            			<option value="1">学前教育</option>
+            			<option value="2">数字媒体技术</option>
+            			<option value="3">教育技术学</option>
+           				<option value="4">小学语文</option>
+          			</select>
+          			&nbsp;&nbsp;
+          			班级：
+          			<select name="s_isclass" class="input" onchange="changesearch()"  style="width:60px; line-height:17px;display:inline-block">
+            			<option value="1">01</option>
+            			<option value="2">02</option>
+            			<option value="3">03</option>
+          			</select>
+        		</li>
+        		<li>
+          			<input type="text" placeholder="学号" name="keywords" class="input" style="width:250px; line-height:17px;display:inline-block" />
+          			<a href="javascript:void(0)" class="button border-main icon-search" onclick="changesearch2()" > 搜索</a>
+          		</li>
+      		</ul>
+   	 	</div>
+   	 	<table class="table table-hover text-center">
+      		<tr>
+        		<th width="100" style="text-align:left; padding-left:20px;">学号</th>
+        		<th width="10%">姓名</th>
+        		<th>性别</th>
+        		<th>年龄</th>
+        		<th>专业</th>
+        		<th>班级</th>
+        		<th width="15%">更新时间</th>
+        		<th width="200">操作</th>
+      		</tr>
+      		<volist name="list" id="vo">
+        		<tr>
+          			<td style="text-align:left; padding-left:20px;">2015272040132</td>
+          			<td>AAA</td>
+          			<td>男</td>
+          			<td>20</td>
+          			<td>数字媒体技术</td>
+          			<td>1501</td>
+          			<td>2016-07-01</td>
+          			<td>
+          				<div class="button-group">
+          					<a class="button border-main" href="info.html">
+          						<span class="icon-edit"></span>详情
+          					</a>
+          					<a class="button border-main" href="info.html" target="right1">
+          						<span class="icon-edit"></span>修改
+          					</a>
+          				</div>
+          			</td>
+        		</tr>
+        		<tr>
+        			<td colspan="8">
+        				<div class="pagelist">
+							<a href="">上一页</a>
+							<span class="current">1</span>
+							<a href="">2</a>
+							<a href="">3</a>
+							<a href="">下一页</a>
+							<a href="">尾页</a>
+						</div>
+					</td>
+				</tr>
+    		</table>
+  		</div>
+  	</form>
+<script type="text/javascript">
+
+//搜索
+function changesearch1(){	
+		
+}
+//搜索
+function changesearch2(){	
+		
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="renderer" content="webkit">
+<title></title>
+<link rel="stylesheet" href="../css/lianghuajifen.css">
+<link rel="stylesheet" href="../css/admin.css">
+<script src="../js/jquery.js"></script>
+<script src="../js/pintuer.js"></script>
+<script type="text/javascript">  
+var count = 1;  
+function add() {  
+  var tbl = document.all.jifen;  
+  var rows = tbl.rows.length;  
+  var tr = tbl.insertRow(rows);  
+  var name = tr.insertCell(0);  
+  name.innerHTML = '<select id="province'+count+'" size=1 onchange="getCity()"> <option value= 0 >北京</option> <option value= 1 >上海</option> <option value= 2 >天津</option> <option value= 3 >重庆</option></select>';  
+  var tel = tr.insertCell(1);  
+  tel.innerHTML = '<select id="city'+count+'" style="width:60px"></select>';  
+  var rdo = tr.insertCell(2);  
+  rdo.innerHTML = '<input type="radio" value="0" name="rdo' + count + '">Yes <input type="radio" value="1" name="rdo' + count + '">No';  
+  var chk = tr.insertCell(3);  
+  chk.innerHTML = '<input type="checkbox" value="0" name="chk' + count + '">Modify <input type="checkbox" value="1" name="chk' + count + '">Delete';
+  count++;  
+}
+</script> 
+<script> 
+var arr = new  Array();
+arr[0 ]="东城,西城,崇文,宣武,朝阳,丰台,石景山,海淀,门头沟,房山,通州,顺义,昌平,大兴,平谷,怀柔,密云,延庆" 
+arr[1 ]="黄浦,卢湾,徐汇,长宁,静安,普陀,闸北,虹口,杨浦,闵行,宝山,嘉定,浦东,金山,松江,青浦,南汇,奉贤,崇明" 
+arr[2 ]="和平,东丽,河东,西青,河西,津南,南开,北辰,河北,武清,红挢,塘沽,汉沽,大港,宁河,静海,宝坻,蓟县" 
+arr[3 ]="万州,涪陵,渝中,大渡口,江北,沙坪坝,九龙坡,南岸,北碚,万盛,双挢,渝北,巴南,黔江,长寿,綦江,潼南,铜梁,大足,荣昌,壁山,梁平,城口,丰都,垫江,武隆,忠县,开县,云阳,奉节,巫山,巫溪,石柱,秀山,酉阳,彭水,江津,合川,永川,南川" 
+function getCity()
+{
+    var pro = document.getElementById("province1");
+    var city = document.getElementById("city");
+    var index = pro.selectedIndex;
+    var cityArr = arr[index].split(",");   
+    
+    city.length = 0;
+    //将城市数组中的值填充到城市下拉框中
+    for(var i=0;i<cityArr.length;i++)
+    {
+		city[i]=new Option(cityArr[i],cityArr[i]);
+    }
+}
+</script> 
+</head>
+<body>
+<input type="button" onclick="add()" value="Add-Customer">  
+<div>
+<div class="nav">
+<ul>
+<li class="nav-year">按年度进行选择:</li>
+<li><a href="add 2015.html">大一</a></li>
+<li><a href="add 2016.html">大二</a></li>
+<li><a href="add 2017.html">大三</a></li>
+<li><a href="add 2018.html">大四</a></li>
+</ul>
+</div>
+<div align="center">
+<table width="50%" height="81" border="1" align="left" id="jifen" name="jifen">
+  <tr>
+    <td height="29" colspan="4" align="center"><h1>(2015年度)个人积分情况一览表</h1></td>
+    </tr>
+  <tr align="center">
+    <td width="162" height="21">积分栏目</td>
+    <td width="239">积分名称</td>
+    <td width="418">积分细则</td>
+    <td width="351">积分值</td>
+  </tr>
+  <tr align="center">
+    <td height="21">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+</div>
+</div>
+</body></html>
